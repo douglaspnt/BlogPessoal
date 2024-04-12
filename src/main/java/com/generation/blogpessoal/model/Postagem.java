@@ -1,3 +1,5 @@
+//que será transformado em uma tabela no Banco de dados.
+
 package com.generation.blogpessoal.model;
 
 import java.time.LocalDateTime;
@@ -17,19 +19,18 @@ import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "tb_postagens")
-
 public class Postagem {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+    
+    @Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY) 
 	private Long id;
 	
-	@NotBlank(message = "O atributo titulo é Obrigatorio!")
-	@Size(min = 5, max = 100, message = "O atributo titulo deve conter no minino 05 e no maximo 100 caracteres")
+	@NotBlank(message = "O atributo título é Obrigatório!") 
+	@Size(min = 5, max = 100, message = "O atributo título deve conter no mínimo 05 e no máximo 100 caracteres")
 	private String titulo;
 	
-	@NotBlank(message = "O atributo titulo é Obrigatorio!")
-	@Size(min = 10, max = 1000, message = "O atributo titulo deve conter no minino 10 e no maximo 1000 caracteres")
+	@NotBlank(message = "O atributo texto é Obrigatório!")
+	@Size(min = 10, max = 1000, message = "O atributo texto deve conter no mínimo 10 e no máximo 1000 caracteres")
 	private String texto;
 	
 	@UpdateTimestamp
@@ -38,6 +39,10 @@ public class Postagem {
 	@ManyToOne
 	@JsonIgnoreProperties("postagem")
 	private Tema tema;
+	
+	@ManyToOne
+	@JsonIgnoreProperties("postagem")
+	private Usuario usuario;
 
 	public Long getId() {
 		return id;
@@ -78,6 +83,13 @@ public class Postagem {
 	public void setTema(Tema tema) {
 		this.tema = tema;
 	}
-	
-	
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
 }

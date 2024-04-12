@@ -1,3 +1,5 @@
+//acessar os dados da sus aplicação, que foram persistidos no Banco de dados.
+
 package com.generation.blogpessoal.repository;
 
 import java.util.List;

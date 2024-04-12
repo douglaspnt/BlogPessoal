@@ -1,3 +1,5 @@
+//que será transformado em uma tabela no Banco de dados.
+
 package com.generation.blogpessoal.model;
 
 import java.util.List;

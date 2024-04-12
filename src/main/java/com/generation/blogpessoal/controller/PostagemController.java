@@ -1,3 +1,7 @@
+//A primeira parte do sistema que interage com a Requisição HTTP enviada pelo cliente
+//é a Camada de Controle(Controller). Ela define os Endpoints da API, ou seja, os 
+//pontos finais das rotas.
+
 package com.generation.blogpessoal.controller;
 
 import java.util.List;

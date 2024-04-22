@@ -1,4 +1,4 @@
-﻿package com.generation.blogpessoal.configuration;
+package com.generation.blogpessoal.configuration;
 
 import org.springdoc.core.customizers.OpenApiCustomizer;
 import org.springframework.context.annotation.Bean;
@@ -16,7 +16,7 @@ import io.swagger.v3.oas.models.responses.ApiResponses;
 public class SwaggerConfig {
 
 	@Bean
-    OpenAPI springBlogPessoalOpenAPI() {
+	 OpenAPI springBlogPessoalOpenAPI() {
         return new OpenAPI()
             .info(new Info()
                 .title("Projeto Blog Pessoal")
@@ -33,8 +33,6 @@ public class SwaggerConfig {
                 .description("Github")
                 .url("https://github.com/douglaspnt/BlogPessoal"));
     }
-
-
 	@Bean
 	OpenApiCustomizer customerGlobalHeaderOpenApiCustomiser() {
 
